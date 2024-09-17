@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.edit = edit;
+const fs_1 = __importDefault(require("fs"));
+function edit(options) {
+    const tasks = JSON.parse(fs_1.default.readFileSync("todo.json", "utf-8"));
+    const taskId = options.id;
+    const ongoing = tasks["ongoing"];
+    let task = ongoing[taskId];
+    if (options.title) {
+        task.Title = options.title;
+    }
+    if (options.description) {
+        task.Description = options.description;
+    }
+    if (options.dueDate) {
+        task.DueDate = options.dueDate;
+    }
+    if (options.priority) {
+        task.Priority = options.priority;
+    }
+    ongoing[taskId] = task;
+    tasks["ongoing"] = ongoing;
+    fs_1.default.writeFileSync("todo.json", JSON.stringify(tasks));
+}

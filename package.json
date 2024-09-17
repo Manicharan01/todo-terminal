@@ -1,17 +1,20 @@
 {
-  "name": "todo-terminal",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "commander": "^12.1.0",
-    "fs": "^0.0.1-security",
-    "inquirer": "^10.1.7"
-  }
+    "name": "todo-terminal",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "commander": "^12.1.0",
+        "fs": "^0.0.1-security",
+        "inquirer": "^10.1.7"
+    },
+    "bin": {
+        "todo": "bin/index.js"
+    }
 }
